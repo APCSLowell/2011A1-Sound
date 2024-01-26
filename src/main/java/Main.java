@@ -1,13 +1,15 @@
 public class Main {
-  public static void main(String[] args) {
-    APLine line1 = new APLine(5, 4, -17);
-    double slope1 = line1.getSlope();
-    boolean onLine1 = line1.isOnLine(5, -2);
-    System.out.println(slope1 + " " + onLine1);
-
-    APLine line2 = new APLine(-25, 40, 30);
-    double slope2 = line2.getSlope();
-    boolean onLine2 = line2.isOnLine(5, -2);
-    System.out.println(slope2 + " " + onLine2);
+  public static void main(String[] args)
+  {
+    System.out.println("******* A-1 *******");
+    Sound sound = new Sound();
+    sound.samples = new int[] {40, 2532, 17, -2300, -17, -4000, 2000, 1048,-420, 33, 15, -32, 2030, 3223};
+    int numChanges = sound.limitAmplitude(2000);
+    System.out.println(numChanges);
+    System.out.println(java.util.Arrays.toString(sound.samples));
+    System.out.println("******* A-2 *******");
+    sound.samples = new int[] {0, 0, 0, 0, -14, 0, -35, -39, 0,-7, 16, 32, 37, 29, 0, 0};
+    sound.trimSilenceFromBeginning();
+    System.out.println(java.util.Arrays.toString(sound.samples));
   }
 }
